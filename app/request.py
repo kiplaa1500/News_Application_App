@@ -1,5 +1,5 @@
 from .models import News
-import requests,json
+from . import request, json
 
 News = News
 
@@ -23,7 +23,7 @@ def get_news(category):
     get_news_url = base_url.format(category,api_key)
     print(get_news_url)
     
-    get_news_response = requests.get(get_news_url).json()
+    get_news_response = request.get(get_news_url).json()
 
         
 
@@ -88,7 +88,7 @@ def get_article(source):
     get_news_url = base_url.format(source,api_key)
     
     # get_news_response = json.loads(get_news_data)
-    get_news_response = requests.loads(get_news_data).json()
+    get_news_response = request.loads(get_news_data).json()
 
         # news_results = None
 
